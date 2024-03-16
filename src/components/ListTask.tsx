@@ -1,23 +1,34 @@
 import { Trash, CheckCircle } from "phosphor-react";
-import { Task } from "../context/ContextList";
-import { useState } from "react";
+import { ContextList, Task } from "../context/ContextList";
+import { useContext, useState } from "react";
 import { notifyAddTask } from "../utils/notify";
+import Separators from "./Separator";
+import FormEdit from "./FormEdit";
 
-interface ListTaskProps {
+export interface ListTaskProps {
   task: Task;
   onRemove: () => void;
 }
 
 export default function ListTask({ task, onRemove }: ListTaskProps) {
   const [isCompleted, setIsCompleted] = useState(false);
+  const [isDisabledVerify, setIsDisabledVerify] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const { EditTask } = useContext(ContextList);
 
   function handleMarkStatusTask() {
-    setIsCompleted(!isCompleted);
-    notifyAddTask("Tarefa concluida!");
+    setIsCompleted(true);
+    setIsDisabledVerify(!isDisabledVerify);
+    notifyAddTask("Tarefa" + " " + task.title + " " + "concluída!");
+  }
+
+  function handleIdTask(newTitle: string) {
+    EditTask(task.id, newTitle);
+    setIsEditMode(false);
   }
 
   return (
-    <div className="border w-[500px] p-2 h-14 rounded-lg  flex justify-between mb-2 cursor-pointer hover:scale-105 hover:bg-gray-700 hover: hover:border-black transition duration-200">
+    <div className="border w-[500px] p-2 h-14 rounded-lg  flex justify-between mb-2 cursor-pointer hover:scale-105 hover:bg-gray-700 hover: hover:border-white transition duration-200">
       <div className="flex gap-3 items-center">
         <div
           className={`${
@@ -26,20 +37,29 @@ export default function ListTask({ task, onRemove }: ListTaskProps) {
         />
         <p>{task.title}</p>
       </div>
-      <div className="flex gap-2 ">
-        {}
+
+      <div className="flex gap-1 ">
         <button
           onClick={onRemove}
           className="hover:text-red-500 transition-colors duration-200 hover:scale-110"
         >
           <Trash size={24} />
         </button>
-        <button
-          onClick={handleMarkStatusTask}
-          className="hover:text-green-500  transition-colors duration-200 hover:scale-110"
-        >
-          <CheckCircle size={24} />
-        </button>
+        <Separators />
+
+        {isCompleted ? (
+          <button className="hover:text-blue-500 transition-colors duration-200 hover:scale-110">
+            <FormEdit key={task.id} task={task} onSave={handleIdTask} />
+          </button>
+        ) : (
+          <button
+            onClick={handleMarkStatusTask}
+            className="hover:text-green-500 transition-colors duration-200 hover:scale-110"
+            disabled={false}
+          >
+            <CheckCircle size={24} />
+          </button>
+        )}
       </div>
     </div>
   );

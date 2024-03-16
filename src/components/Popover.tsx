@@ -8,6 +8,11 @@ const DropdownMenuDemo = () => {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
   const [openDropDown, setOpenDropDown] = React.useState(false);
   const { TaskOnAlfabeticOrder } = useContext(ContextList);
+  // const [theme, setTheme] = useState("light");
+
+  // function toogleTheme() {
+  //   setTheme(theme === "light" ? "dark" : "light");
+  // }
 
   function handleAlfabeticOrder() {
     TaskOnAlfabeticOrder();
@@ -34,8 +39,6 @@ const DropdownMenuDemo = () => {
               <DropdownMenu.CheckboxItem
                 onClick={handleAlfabeticOrder}
                 className="cursor-pointer group text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1"
-                checked={bookmarksChecked}
-                onCheckedChange={setBookmarksChecked}
               >
                 <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
                   <LetterCaseCapitalizeIcon className="text-gray-400" />
@@ -60,7 +63,10 @@ const DropdownMenuDemo = () => {
                 checked={bookmarksChecked}
                 onCheckedChange={setBookmarksChecked}
               >
-                <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
+                <DropdownMenu.ItemIndicator
+                  className="absolute left-0 w-[25px] inline-flex items-center justify-center"
+                  // onClick={toogleTheme}
+                >
                   <Moon />
                 </DropdownMenu.ItemIndicator>
                 Tema

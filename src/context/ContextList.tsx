@@ -10,6 +10,7 @@ export interface ContextTypeList {
   InsertTaskOnList: (task: Task) => void;
   RemoveTaskOnList: (id: number) => void;
   TaskOnAlfabeticOrder: () => void;
+  EditTask: (id: number, taskTitle: string) => void;
 }
 
 export interface ContextProviderProps {
@@ -52,11 +53,24 @@ export function ListContextProvider({ children }: ContextProviderProps) {
     console.log("chamado");
   };
 
+  const EditTask = (taskId: number, newTitle: string) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return { ...task, title: newTitle };
+      }
+      return task;
+    });
+
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
+
   const contextValue: ContextTypeList = {
     tasks,
     InsertTaskOnList,
     RemoveTaskOnList,
     TaskOnAlfabeticOrder,
+    EditTask,
   };
 
   return (
