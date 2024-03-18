@@ -8,11 +8,6 @@ const DropdownMenuDemo = () => {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
   const [openDropDown, setOpenDropDown] = React.useState(false);
   const { TaskOnAlfabeticOrder } = useContext(ContextList);
-  // const [theme, setTheme] = useState("light");
-
-  // function toogleTheme() {
-  //   setTheme(theme === "light" ? "dark" : "light");
-  // }
 
   function handleAlfabeticOrder() {
     TaskOnAlfabeticOrder();
@@ -63,10 +58,7 @@ const DropdownMenuDemo = () => {
                 checked={bookmarksChecked}
                 onCheckedChange={setBookmarksChecked}
               >
-                <DropdownMenu.ItemIndicator
-                  className="absolute left-0 w-[25px] inline-flex items-center justify-center"
-                  // onClick={toogleTheme}
-                >
+                <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
                   <Moon />
                 </DropdownMenu.ItemIndicator>
                 Tema
