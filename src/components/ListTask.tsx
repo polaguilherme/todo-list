@@ -13,7 +13,6 @@ export interface ListTaskProps {
 export default function ListTask({ task, onRemove }: ListTaskProps) {
   const [isCompleted, setIsCompleted] = useState(false);
   const [isDisabledVerify, setIsDisabledVerify] = useState(false);
-  const [isEditMode, setIsEditMode] = useState(false);
   const { EditTask } = useContext(ContextList);
 
   function handleMarkStatusTask() {
@@ -24,7 +23,6 @@ export default function ListTask({ task, onRemove }: ListTaskProps) {
 
   function handleIdTask(newTitle: string) {
     EditTask(task.id, newTitle);
-    setIsEditMode(false);
   }
 
   return (
