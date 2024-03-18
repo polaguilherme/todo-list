@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ListContextProvider } from "./context/ContextList";
 import Router from "./Router";
 
-function App() {
+export default function App() {
   return (
     <>
       <BrowserRouter>
@@ -13,5 +13,3 @@ function App() {
     </>
   );
 }
-
-export default App;
