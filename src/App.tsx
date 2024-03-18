@@ -1,15 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
-
 import { ListContextProvider } from "./context/ContextList";
-// import Router from "./Router";
-import Home from "./components/Home";
+import Router from "./Router";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <ListContextProvider>
-          <Home />
+          <Router />
         </ListContextProvider>
       </BrowserRouter>
     </>

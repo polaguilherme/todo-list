@@ -7,27 +7,11 @@ import { notifyAddTask, notifyRemoveTask } from "../utils/notify";
 import DropdownMenuDemo from "./Popover";
 import { Separator } from "@radix-ui/react-separator";
 import Separators from "./Separator";
-import { useNavigate } from "react-router-dom";
-
-interface UserData {
-  name: string;
-}
 
 export default function Home() {
   const [newTask, setAddNewTask] = useState("");
   const { InsertTaskOnList, RemoveTaskOnList } = useContext(ContextList);
   const [tasks, setTask] = useState<Task[]>([]);
-  const navigate = useNavigate();
-  const [userData, setUserData] = useState<UserData>();
-
-  useEffect(() => {
-    const storedUserData = localStorage.getItem("userData");
-    if (storedUserData) {
-      setUserData(JSON.parse(storedUserData));
-    } else {
-      navigate("/");
-    }
-  }, [navigate]);
 
   function handleNewtask() {
     if (newTask.trim() !== "") {
@@ -106,7 +90,7 @@ export default function Home() {
             />
           ))}
         </div>
-      </> 
+      </>
     </>
   );
 }
