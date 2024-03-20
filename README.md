@@ -18,20 +18,26 @@ Para executar este projeto localmente, siga as instruções abaixo:
 
 ## Funcionalidades Principais
 
-- Adicionar novas tarefas.
+- Adicionar novas tarefas (todas armazenadas no local storage).
 - Editar tarefas existentes.
 - Excluir tarefas.
 - Marcar tarefas como concluídas.
-- Filtrar tarefas por status (concluídas / pendentes).
+- Ordenar Tarefas por ordem alfabetica.
 
 ## Tecnologias Utilizadas
 
 - React
 - TypeScript
-- HTML5
-- CSS3
+- TailWind CSS
 
-## Capturas de Tela
+## Bibliotecas Utilizadas
+
+- Radix Ui
+- Zod
+- React toastFy
+- Phosphor icons
+- React router dom
+- React hook form
 
 ## Instruções de Contribuição
 
@@ -42,7 +48,3 @@ Contribuições são bem-vindas! Se você deseja contribuir para este projeto, s
 3. Faça commit de suas alterações (`git commit -am 'Adiciona uma nova feature'`).
 4. Faça push para a branch (`git push origin feature/nome-da-feature`).
 5. Abra um Pull Request.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
