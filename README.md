@@ -8,13 +8,13 @@ Este é um simples aplicativo de Lista de Tarefas (Todo List) desenvolvido com R
 
 Para executar este projeto localmente, siga as instruções abaixo:
 
-1. Certifique-se de ter o Node.js instalado em sua máquina.
-2. Clone este repositório em seu ambiente local.
-3. Abra o terminal em seu editor de código preferido.
-4. Navegue até o diretório do projeto.
-5. Execute o comando `npm install` para instalar as dependências do projeto.
-6. Após a instalação das dependências, execute o comando `npm run dev` para iniciar o servidor de desenvolvimento.
-7. Abra seu navegador e acesse `http://localhost:3000` para visualizar o projeto em execução.
+1.  ter o Node.js instalado em sua máquina.
+2.  Clone este repositório em seu ambiente local.
+3.  Abra o terminal em seu editor de código.
+4.  Navegue até o diretório do projeto.
+5.  Execute o comando `npm install` para instalar as dependências do projeto.
+6.  Após a instalação das dependências, execute o comando `npm run dev` para iniciar o servidor de desenvolvimento.
+7.  Abra seu navegador e acesse `http://localhost:3000` para visualizar o projeto em execução.
 
 ## Funcionalidades Principais
 
