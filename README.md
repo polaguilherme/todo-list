@@ -33,8 +33,6 @@ Para executar este projeto localmente, siga as instruções abaixo:
 
 ## Capturas de Tela
 
-_Insira capturas de tela do aplicativo em funcionamento aqui_
-
 ## Instruções de Contribuição
 
 Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
