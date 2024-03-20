@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-Este é um simples aplicativo de Lista de Tarefas (Todo List) desenvolvido com React e TypeScript. Ele permite que os usuários gerenciem suas tarefas de forma eficiente, adicionando, editando, excluindo e marcando como concluídas.
+Este é um simples aplicativo de Lista de Tarefas (Todo List) desenvolvido com React e TypeScript. Ele permite que os usuários gerenciem suas tarefa, adicionando, editando, excluindo e marcando como concluídas.
 
 ## Como Rodar o Projeto
 
